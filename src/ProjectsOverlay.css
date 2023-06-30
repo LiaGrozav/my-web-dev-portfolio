@@ -1,0 +1,26 @@
+.links {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .link {
+    color: pink;
+    animation: logoAnimation 1s ease-in-out;
+    text-decoration: none;
+    font-size: larger;
+    margin-bottom: 50px;
+  }
+  
+  @keyframes logoAnimation {
+    0% {
+      opacity: 0; /* Initial state of the logo */
+      transform: translateY(20px); /* Initial position of the logo */
+    }
+    100% {
+      opacity: 1; /* Final state of the logo */
+      transform: translateY(0); /* Final position of the logo */
+    }
+  }
+  
+  

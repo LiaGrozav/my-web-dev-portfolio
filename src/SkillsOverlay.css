@@ -1,0 +1,27 @@
+.skills > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /* Take up the full width of the container */
+  padding: 0 20px; /* Add horizontal padding if desired */
+}
+
+.skills img {
+    margin: 0 5px;
+    width: 100px; /* Adjust the width as needed */
+  height: 100px;
+  animation-name: logoAnimation; /* Name of the animation */
+  animation-duration: 1s; /* Duration of the animation */
+  animation-fill-mode: forwards; /* Maintain the final state of the animation */
+  }
+
+  @keyframes logoAnimation {
+    0% {
+      opacity: 0; /* Initial state of the logo */
+      transform: translateY(20px); /* Initial position of the logo */
+    }
+    100% {
+      opacity: 1; /* Final state of the logo */
+      transform: translateY(0); /* Final position of the logo */
+    }
+  }

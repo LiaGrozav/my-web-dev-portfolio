@@ -1,0 +1,34 @@
+.btn-primary {
+    background-color: #003c5f;
+    color: rgb(209, 209, 198);
+    border: 1px solid rgb(209, 209, 198); 
+  }
+  
+  .btn-primary:hover {
+    color: #003c5f;
+    background-color: pink;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .container-contact-form {
+    opacity: 0; /* Initial state of the form */
+    animation-name: formAnimation; /* Name of the animation */
+    animation-duration: 1s; /* Duration of the animation */
+    animation-fill-mode: forwards; /* Maintain the final state of the animation */
+  }
+  
+  @keyframes formAnimation {
+    0% {
+      opacity: 0; /* Initial state of the form */
+      transform: translateY(20px); /* Initial position of the form */
+    }
+    100% {
+      opacity: 1; /* Final state of the form */
+      transform: translateY(0); /* Final position of the form */
+    }
+  }
