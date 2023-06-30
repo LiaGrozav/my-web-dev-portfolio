@@ -50,10 +50,9 @@ const HomePage = () => {
     setIsEditingContactForm(false);
   };
 
-  const handleContactFormSubmit = (formData) => {
-    console.log(formData);
+  const handleContactFormSubmit = (_formData) => {
+    console.log(_formData);
   };
-  
 
   const handleBottomLeftClick = () => {
     setIsBottomLeftOpen(!isBottomLeftOpen);
@@ -110,7 +109,7 @@ const HomePage = () => {
         <span>Contact</span>
         {(activeCorner === "bottom-right" || isEditingContactForm) && (
           <div className={`overlay ${isBottomRightClicked ? "open" : ""}`}>
-            <ContactForm            
+            <ContactForm
               handleFormSubmit={handleContactFormSubmit}
             />
           </div>
