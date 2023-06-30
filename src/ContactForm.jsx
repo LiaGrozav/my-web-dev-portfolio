@@ -8,26 +8,25 @@ const ContactForm = ({ handleClose }) => {
   const [message, setMessage] = useState("");
 
   const handleNameChange = (e) => {
-    console.log(name);
-    setName(e.target.value);
+    const newName = e.target.value;
+    console.log(newName);
+    setName(newName);
   };
 
   const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+    const newEmail = e.target.value;
+    console.log(newEmail);
+    setEmail(newEmail);
   };
 
   const handleMessageChange = (e) => {
-    setMessage(e.target.value);
+    const newMessage = e.target.value;
+    console.log(newMessage);
+    setMessage(newMessage);
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Reset the form fields
-    setName("");
-    setEmail("");
-    setMessage("");
-    // Close the form
-    handleClose();
     const formData = {
       name,
       email,
@@ -39,7 +38,7 @@ const ContactForm = ({ handleClose }) => {
   return (
     <div className="container-contact-form">
       <p>
-        Do you have any questions or would like to meet me? 
+        Do you have any questions or would like to meet me?
         <br />
         <br />
         Please do not hesitate to contact me directly.

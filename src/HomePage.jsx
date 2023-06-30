@@ -51,12 +51,9 @@ const HomePage = () => {
   };
 
   const handleContactFormSubmit = (formData) => {
-    // Logic to handle form submission
-    console.log(formData); // You can access the submitted data as an object: { name, email, message }
-    setContactFormData(formData);
-    setIsEditingContactForm(false);
-    // Additional logic, such as sending form data to server
+    console.log(formData);
   };
+  
 
   const handleBottomLeftClick = () => {
     setIsBottomLeftOpen(!isBottomLeftOpen);
@@ -113,8 +110,7 @@ const HomePage = () => {
         <span>Contact</span>
         {(activeCorner === "bottom-right" || isEditingContactForm) && (
           <div className={`overlay ${isBottomRightClicked ? "open" : ""}`}>
-            <ContactForm
-              handleClose={handleCloseContactForm}
+            <ContactForm            
               handleFormSubmit={handleContactFormSubmit}
             />
           </div>
