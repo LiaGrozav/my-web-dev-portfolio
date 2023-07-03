@@ -6,14 +6,18 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transform: translateY(-100%); /* Start from above the screen */
-  opacity: 0; /* Initially set the opacity to 0 */
-  transition: transform 1s, opacity 1s; /* Apply the transition effect */
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
+}
+
+.homepage.cursor-enabled {
+  cursor: none;
 }
 
 .show-homepage .homepage {
-  transform: translateY(0); /* Moves the homepage to its original position */
-  opacity: 1; /* Fades in the homepage */
+  transform: translateY(0);
+  opacity: 1;
   background-color: #003c5f;
 }
 
@@ -43,7 +47,6 @@
   background-color: #003c5f;
   margin: 55px;
   font-weight: bold;
-  cursor: pointer;
   color: pink;
   font-weight: 800;
   display: flex;
@@ -58,7 +61,6 @@
   transition: opacity 0.5s linear;
 }
 
-
 .overlay {
   position: fixed;
   top: 50%;
@@ -72,7 +74,6 @@
   justify-content: center;
   align-items: center;
   z-index: 2;
-  /* pointer-events: none; */
 }
 
 .overlay span {

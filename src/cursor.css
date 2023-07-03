@@ -1,0 +1,32 @@
+#cursor {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.8));
+  border-radius: 50%;
+  z-index: 9999;
+  animation: cursorAnim 2s infinite;
+}
+
+@keyframes cursorAnim {
+  0% {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0);
+  }
+  100% {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.8);
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ContactForm.css";
+import submitForm from "./functions/submitForm";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 const ContactForm = ({ handleClose }) => {
@@ -25,7 +26,7 @@ const ContactForm = ({ handleClose }) => {
     setMessage(newMessage);
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     const formData = {
       name,
@@ -33,17 +34,27 @@ const ContactForm = ({ handleClose }) => {
       message,
     };
     console.log(formData);
+
+    try {
+      await submitForm(formData);
+      // Form submitted successfully
+      // Add any further actions or notifications here
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // Handle form submission error
+      // Add any error handling or notifications here
+    }
   };
 
   return (
     <div className="container-contact-form">
       <p>
-        Do you have any questions or would like to meet me?
+        Do you have any questions or would you like to meet me?
         <br />
         <br />
         Please do not hesitate to contact me directly.
       </p>
-      <form netlify="true" name="contactForm" onSubmit={handleFormSubmit}>
+      <form name="contactForm" onSubmit={handleFormSubmit}>
         <input type="hidden" name="form-name" value="contactForm" />
         <div className="mb-3">
           <label htmlFor="name" className="form-label">

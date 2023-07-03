@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./HomePage.css";
 import woman from "./images/woman.jpg";
 import BioOverlay from "./BioOverlay";
 import ProjectsOverlay from "./ProjectsOverlay";
 import SkillsOverlay from "./SkillsOverlay";
 import ContactForm from "./ContactForm";
+
+import "./cursor.css";
 
 const HomePage = () => {
   useEffect(() => {
@@ -16,7 +19,6 @@ const HomePage = () => {
 
   const [activeCorner, setActiveCorner] = useState(null);
   const [isEditingContactForm, setIsEditingContactForm] = useState(false);
-  const [contactFormData, setContactFormData] = useState(null);
   const [isProjectsOverlayOpen, setIsProjectsOverlayOpen] = useState(false);
   const [isBottomLeftOpen, setIsBottomLeftOpen] = useState(false);
   const [isBottomRightClicked, setIsBottomRightClicked] = useState(false);
@@ -50,8 +52,16 @@ const HomePage = () => {
     setIsEditingContactForm(false);
   };
 
-  const handleContactFormSubmit = (_formData) => {
-    console.log(_formData);
+  const handleContactFormSubmit = async (formData) => {
+    try {
+      await axios.post("/api/submit-form", formData);
+      console.log("Form submitted successfully");
+      // Add any further actions or notifications here
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      // Handle form submission error
+      // Add any error handling or notifications here
+    }
   };
 
   const handleBottomLeftClick = () => {
@@ -60,6 +70,7 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
+      <div id="cursor"></div>
       <div
         className={`corner top-left ${
           activeCorner === "top-left" ? "active" : ""
@@ -111,6 +122,7 @@ const HomePage = () => {
           <div className={`overlay ${isBottomRightClicked ? "open" : ""}`}>
             <ContactForm
               handleFormSubmit={handleContactFormSubmit}
+              handleClose={handleCloseContactForm}
             />
           </div>
         )}
