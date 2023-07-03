@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import {submitForm} from "./functions/submitForm";
 import "./ContactForm.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
@@ -36,8 +36,7 @@ const ContactForm = ({ handleClose }) => {
     console.log(formData);
   
     try {
-      const response = await axios.post("/api/submit-form", formData);
-      console.log("Form submission response:", response.data);
+      await submitForm(formData);
       // Form submitted successfully
       // Add any further actions or notifications here
     } catch (error) {
@@ -49,7 +48,59 @@ const ContactForm = ({ handleClose }) => {
 
   return (
     <div className="container-contact-form">
-      {/* Rest of your component code */}
+      <p>
+        Do you have any questions or would like to meet me?
+        <br />
+        <br />
+        Please do not hesitate to contact me directly.
+      </p>
+      <form netlify="true" name="contactForm" onSubmit={handleFormSubmit}>
+        <input type="hidden" name="form-name" value="contactForm" />
+        <div className="mb-3">
+          <label htmlFor="name" className="form-label">
+            Name
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="name"
+            name="name"
+            value={name}
+            onChange={handleNameChange}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">
+            Email
+          </label>
+          <input
+            type="email"
+            className="form-control"
+            id="email"
+            name="email"
+            value={email}
+            onChange={handleEmailChange}
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="message" className="form-label">
+            Message
+          </label>
+          <textarea
+            className="form-control"
+            id="message"
+            name="message"
+            rows="3"
+            value={message}
+            onChange={handleMessageChange}
+          ></textarea>
+        </div>
+        <div className="button-container">
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
