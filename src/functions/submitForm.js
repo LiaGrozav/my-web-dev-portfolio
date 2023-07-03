@@ -1,10 +1,11 @@
 export const submitForm = async (data) => {
   try {
+    const apiKey = process.env.SENDGRID_API_KEY; // Retrieve the API key from the environment variable
+
     const response = await fetch("https://api.sendgrid.com/v3/mail/send", {
       method: "POST",
       headers: {
-        Authorization:
-          "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",
+        Authorization: `Bearer ${apiKey}`, // Use the retrieved API key in the Authorization header
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
