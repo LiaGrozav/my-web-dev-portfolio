@@ -39,7 +39,7 @@ const ContactForm = ({ handleFormSubmit, handleClose }) => {
         <br />
         Please do not hesitate to contact me directly.
       </p>
-      <form name="contactForm" onSubmit={handleSubmit}>
+      <form name="contactForm"  data-netlify="true" onSubmit={handleSubmit}>
         <input type="hidden" name="form-name" value="contactForm" />
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
