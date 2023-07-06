@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import "./HomePage.css";
 import woman from "./images/woman.jpg";
 import BioOverlay from "./BioOverlay";
 import ProjectsOverlay from "./ProjectsOverlay";
 import SkillsOverlay from "./SkillsOverlay";
 import ContactForm from "./ContactForm";
 
-import "./cursor.css";
+import "./HomePage.css";
 
 const HomePage = () => {
   useEffect(() => {
@@ -54,7 +52,11 @@ const HomePage = () => {
 
   const handleContactFormSubmit = async (formData) => {
     try {
-      await axios.post("/api/submit-form", formData);
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
       console.log("Form submitted successfully");
       // Add any further actions or notifications here
     } catch (error) {

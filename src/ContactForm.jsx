@@ -1,60 +1,45 @@
 import React, { useState } from "react";
-import {submitForm} from "./functions/submitForm";
 import "./ContactForm.css";
-import "bootstrap/dist/js/bootstrap.min.js";
 
-const ContactForm = ({ handleClose }) => {
+const ContactForm = ({ handleFormSubmit, handleClose }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const handleNameChange = (e) => {
     const newName = e.target.value;
-    console.log(newName);
     setName(newName);
   };
 
   const handleEmailChange = (e) => {
     const newEmail = e.target.value;
-    console.log(newEmail);
     setEmail(newEmail);
   };
 
   const handleMessageChange = (e) => {
     const newMessage = e.target.value;
-    console.log(newMessage);
     setMessage(newMessage);
   };
 
-  const handleFormSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
       name,
       email,
       message,
     };
-    console.log(formData);
-  
-    try {
-      await submitForm(formData);
-      // Form submitted successfully
-      // Add any further actions or notifications here
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      // Handle form submission error
-      // Add any error handling or notifications here
-    }
+    handleFormSubmit(formData);
   };
 
   return (
     <div className="container-contact-form">
       <p>
-        Do you have any questions or would like to meet me?
+        Do you have any questions or would you like to meet me?
         <br />
         <br />
         Please do not hesitate to contact me directly.
       </p>
-      <form netlify="true" name="contactForm" onSubmit={handleFormSubmit}>
+      <form name="contactForm" onSubmit={handleSubmit}>
         <input type="hidden" name="form-name" value="contactForm" />
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
