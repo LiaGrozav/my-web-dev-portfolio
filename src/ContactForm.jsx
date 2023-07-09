@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ContactForm.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ContactForm = ({ handleFormSubmit, handleClose }) => {
   const [name, setName] = useState("");

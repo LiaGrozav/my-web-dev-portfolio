@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import LandingPage from "./LandingPage";
+import LandingPage from "./LandingPage.jsx";
 import HomePage from "./HomePage";
 import ContactForm from "./ContactForm";
 import "typeface-roboto-mono";
