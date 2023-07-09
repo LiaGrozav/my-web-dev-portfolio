@@ -17,6 +17,7 @@ const HomePage = () => {
 
   const [activeCorner, setActiveCorner] = useState(null);
   const [isEditingContactForm, setIsEditingContactForm] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [isProjectsOverlayOpen, setIsProjectsOverlayOpen] = useState(false);
   const [isBottomLeftOpen, setIsBottomLeftOpen] = useState(false);
   const [isBottomRightClicked, setIsBottomRightClicked] = useState(false);
