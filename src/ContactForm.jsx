@@ -38,7 +38,7 @@ const ContactForm = ({ handleFormSubmit, handleClose }) => {
         Do you have any questions or would you like to meet me?
         <br />
         <br />
-        Please do not hesitate to contact me directly.
+        Please feel free to contact me directly.
       </p>
       <form name="contactForm"  data-netlify="true" onSubmit={handleSubmit}>
         <input type="hidden" name="form-name" value="contactForm" />
