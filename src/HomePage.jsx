@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import woman from "./images/woman.jpg";
-import BioOverlay from "./BioOverlay";
-import ProjectsOverlay from "./ProjectsOverlay";
-import SkillsOverlay from "./SkillsOverlay";
-import ContactForm from "./ContactForm";
-
+import BioOverlay from "./BioOverlay.jsx";
+import ProjectsOverlay from "./ProjectsOverlay.jsx";
+import SkillsOverlay from "./SkillsOverlay.jsx";
+import ContactForm from "./ContactForm.jsx";
 import "./HomePage.css";
 
 const HomePage = () => {

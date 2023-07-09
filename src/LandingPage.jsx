@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./LandingPage.css";
 import sky from "./images/sky.jpg";
 import satellite from "./images/satellite.jpg";
-import HomePage from "./HomePage";
+import HomePage from "./HomePage.jsx";
 
 const LandingPage = () => {
   const [showFirstImage, setShowFirstImage] = useState(true);
